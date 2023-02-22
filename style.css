@@ -1,0 +1,292 @@
+body{
+
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+hr {
+  width: 99%;
+}
+
+#title{
+
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+#box{
+  width: 300px;
+  height: 274px;
+  margin: 0 auto;
+  margin-top: 20px;
+  
+  display: flex;
+  flex-wrap: wrap;
+ 
+
+}
+
+.tiles{
+  border: 2px solid;
+  width:  60px;
+  height: 60px;
+  margin: 2px;
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+/*                            BOX COLORS                              */
+
+.correct{
+
+  background-color: green;
+  color: white;
+  border-color: white;
+
+}
+
+
+
+.wrongplace{
+
+  background-color: yellow;
+  color: white;
+  border-color: white;
+
+}
+
+.absent{
+  background-color: grey;
+  color: white;
+  border-color: white; 
+
+
+}
+
+
+/*                          HEADER BUTTON                          */
+
+
+.allbuttons{
+  float: right;
+  margin-top: -63px;
+  margin-right: 8px;
+  
+}
+
+.headerbtn{
+  width: 70px;
+  height: 80px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  font-size: 22px;
+ 
+}
+
+.headerbtn-blk{
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+
+}
+
+.allbuttons > button:hover {
+  background-color: rgb(6, 238, 6);
+  
+}
+
+
+
+
+
+/*                           FOOTER                          */
+
+
+.footer {
+  position: fixed;
+  padding: 15px;
+  right: -3px;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  border-top: #c8c8c8 solid 3px;
+  margin: 0;
+  opacity: 2;
+  
+}
+
+
+/*                          Start Over                          */
+
+
+#againbtn{
+  padding: 10px 40px;
+  background-color: rgb(6, 238, 6);
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: large;
+  border: none;
+  border-radius: 10px;
+  
+}
+
+#againbtn:hover{
+  background-color: rgb(151, 255, 140);
+  color: rgb(137, 137, 137);
+}
+
+.Startover{
+
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+/*                                    INVERT                                     */
+
+
+.black{
+  background-color: black;
+  color: #ffffff;
+  
+ 
+} 
+
+
+
+
+/*                            Instructions                              */
+
+
+
+.rightside{
+  float: right;
+  width: 50%;
+  margin-top: 1.8%;
+  border-left: solid 2px;
+  height: 584px;
+  display: none;
+  opacity: 1;
+  
+}
+
+.rightside-info{
+  display: flex;
+}
+
+
+
+ol{
+  
+  padding-top: 0%;
+  font-size: 100%;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 40px;
+}
+
+
+
+
+/*                           Answer (if failed)                          */
+
+
+#answer{
+  position: fixed;
+  padding: 15px;
+  bottom: 32px;
+  width: 100%;
+  font-size:medium;
+  color: rgb(255, 255, 255);
+  
+  text-align: center;
+
+}
+
+
+
+
+
+/*                           Hint                          */
+
+
+.foothint{
+
+  position: fixed;
+  bottom: 41px;
+  width: 100%;
+  margin-bottom: 10px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  
+  
+}
+
+/*                           wingame                          */
+
+
+
+
+.imge{
+
+  text-align: center;
+  display: none;
+  
+  
+}
+
+
+
+
+/*                           Display for mobile devices                          */
+
+
+@media only screen and (max-width: 650px) {
+
+  #title{
+
+    padding-left:  30px;
+    text-align:left;
+  
+  }
+
+
+  .imge{
+
+    margin-top: -63px;
+  } 
+
+
+  .rightside{
+    
+    width: 100%;
+    margin-top: -420px;
+    border-top: solid 2px;
+    height: 470px;
+    transform: translate(0%, 220%) scale(1);
+    display: none;
+   
+  }
+
+  .rightside-info{
+
+    display: flex;
+
+  }
+
+
+
+
+}
+
+
