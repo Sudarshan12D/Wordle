@@ -34,10 +34,7 @@ const getdict = async() => {
 
 
     
-    let loading = document.getElementById("againbtn");
-
-    loading.disabled = true;
-    loading.innerText = "loading...";
+    
 
 
     const res = await fetch("https://api.masoudkf.com/v1/wordle", {
@@ -51,9 +48,6 @@ const getdict = async() => {
     let {dictionary} = json;
     dict = dictionary;
 
-
-    loading.disabled = false;
-    loading.innerText = "Start Over";
 
     return dict;
 
