@@ -291,6 +291,7 @@ ol{
   .imge{
 
     margin-top: -63px;
+    
   } 
 
 
@@ -298,27 +299,54 @@ ol{
     
     width: 100%;
     margin-top: -420px;
-    border-top: solid 2px;
+    
+    
     height: 470px;
     transform: translate(0%, 220%) scale(1);
     display: none;
+    
    
   }
 
   .rightside-info{
 
     display: flex;
+    
 
+  }
+
+  .popup{
+    border-top: solid 2px;
+    margin-top: -80px;
   }
 
   .headerbtn {
-    width: 50px; /* Reduced width for mobile */
-    
-    font-size: 18px; /* Adjust font size as needed */
+    width: 50px; 
+    font-size: 18px; 
   }
 
-
   
+  .Startover{
+    margin-top: -25px;
+    
+  
+  }
+
+  #keyboard-container {
+    margin-top: -5px;
+    
+  }
+  
+  #box{
+    margin-top: -8px;
+   
+  }
+  
+  .foothint{
+
+    padding: 0px;
+    
+  }
 
 
   .key {
