@@ -302,10 +302,20 @@ function Invert(){
 /*                                                     HINT                                                */ 
 function openhint(){
 
+    
+
     let HINT = document.getElementById("foothint");
-    HINT.innerHTML =  "HINT: " + hint ;
-    HINT.style.border = "solid 2px";
-    HINT.style.backgroundColor = "#00ff11";
+
+    // Check if the hint is currently not displayed (or hidden)
+    if (HINT.style.display === "none" || HINT.style.display === "") {
+        HINT.innerHTML = "HINT: " + hint;
+        HINT.style.border = "solid 2px";
+        HINT.style.backgroundColor = "#00ff11";
+        HINT.style.display = "block"; // Show the hint
+    } else {
+        // If the hint is currently displayed, hide it
+        HINT.style.display = "none";
+    }
     
 }
 
