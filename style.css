@@ -318,6 +318,22 @@ ol{
   }
 
 
+  
+
+
+  .key {
+    padding: 8px 6px; /* Reduce padding to fit more keys */
+    margin: 2px; /* Adjust margins between keys */
+    min-width: 25px; /* Set a minimum width for keys */
+    flex: 1; /* Allow keys to grow and shrink as needed */
+    max-width: calc(100% / 10 - 10px); /* Adjust max width for each key */
+  }
+
+  .key.special {
+    min-width: 45px; 
+
+  }
+
 }
 
 
