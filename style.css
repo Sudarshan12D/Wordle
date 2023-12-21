@@ -175,7 +175,7 @@ hr {
   width: 50%;
   margin-top: 1.8%;
   border-left: solid 2px;
-  height: 584px;
+  height: 530px;
   display: none;
   opacity: 1;
   
@@ -245,12 +245,38 @@ ol{
   
 }
 
+/*                           Keyboard                          */
+
+
+
+#keyboard-container {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.key {
+  padding: 10px 15px;
+  margin: 2px;
+  background-color: #f0f0f0;
+  border: 1px solid #d4d4d4;
+  cursor: pointer;
+}
+
+.key:hover {
+  background-color: rgb(6, 238, 6);
+  
+}
 
 
 
 /*                           Display for mobile devices                          */
-
-
 @media only screen and (max-width: 650px) {
 
   #title{

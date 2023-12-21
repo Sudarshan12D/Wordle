@@ -129,53 +129,60 @@ async function initialize(){
         }
     }
 
+    // Update the event listener for the virtual keyboard
+    document.querySelectorAll('.key').forEach(key => {
+        key.addEventListener('click', function() {
+            let keyValue = this.innerText;
+            if (keyValue === 'Del') {
+                handleKeyPress('Backspace');
+            } else {
+                handleKeyPress(keyValue);
+            }
+        });
+    });
+
     document.addEventListener("keyup", (e) => {
         
         if(gameOver) return;
 
-        if ("KeyA" <= e.code && e.code <= "keyZ" ){
-            if(col < width){
-                let currfile = document.getElementById(row.toString() + '-' + col.toString());
-                if(currfile.innerText == ""){
-                    currfile.innerText = e.code[3]
-                    col += 1;
-
-                }
-            }
-        }
-
-        else if (e.code == "Backspace"){
-            if ( 0 < col && col <= width){
-                col -= 1;
-
-            }
-            let currfile = document.getElementById(row.toString() + '-' + col.toString());
-            currfile.innerText = "";
-        }
-
-        else if (e.code == "Enter"){
-
-            if(col == width  ){
+        
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent the default 'Enter' key behavior
+            if (col === width) {
                 update();
                 row += 1;
                 col = 0;
+            } else {
+                window.alert("How can you be so Dumb ? Type in a 4 letter word please");
             }
-
-            else{
-                window.alert("How can you be so Dumb ? Type in a 4 letter word please")
+        } else if (e.key === 'Backspace') {
+            if (col > 0) {
+                col -= 1;
+                let currTile = document.getElementById(row.toString() + '-' + col.toString());
+                currTile.innerText = "";
             }
-
-
+        } else if (e.key.length === 1 && e.key >= 'a' && e.key <= 'z') {
+            if (col < width) {
+                let currTile = document.getElementById(row.toString() + '-' + col.toString());
+                if (currTile.innerText === "") {
+                    currTile.innerText = e.key.toUpperCase();
+                    col += 1;
+                }
+            }
         }
-
-        if (!gameOver && row == height){
+    
+        // Check if the game is over after the 'Enter' key has been processed
+        if (row === height && !gameOver) {
             gameOver = true;
             document.getElementById("answer").innerText = "You missed the word " + word + " and LOST!!";
             document.getElementById("answer").style.backgroundColor = "red";
-            document.getElementById("answer").style.fontSize = "large"
+            document.getElementById("answer").style.fontSize = "large";
         }
 
     })
+
+
+    
 
 }
 
@@ -355,3 +362,57 @@ async function STARTOVER() {
     
     gameOver = false;
 }
+
+
+function toggleKeyboard() {
+    var keyboard = document.getElementById('keyboard-container');
+    if (keyboard.style.display === "none" || keyboard.style.display === "") {
+        keyboard.style.display = "block";
+    } else {
+        keyboard.style.display = "none";
+    }
+}
+
+
+
+
+
+
+
+function handleKeyPress(key) {
+    if (gameOver) return;
+
+    // Prevent double handling for 'Enter' and 'Backspace'
+    if (key === 'Enter') {
+        if (col === width) {
+            update();
+            row += 1;
+            col = 0;
+        } else {
+            window.alert("How can you be so Dumb ? Type in a 4 letter word please");
+        }
+    } else if (key === 'Backspace') {
+        if (col > 0) {
+            col -= 1;
+            let currTile = document.getElementById(row.toString() + '-' + col.toString());
+            currTile.innerText = "";
+        }
+    } else if (key.length === 1 && key >= 'A' && key <= 'Z') {
+        if (col < width) {
+            let currTile = document.getElementById(row.toString() + '-' + col.toString());
+            if (currTile.innerText === "") {
+                currTile.innerText = key;
+                col += 1;
+            }
+        }
+    }
+
+    if (row === height && !gameOver) {
+        gameOver = true;
+        document.getElementById("answer").innerText = "You missed the word " + word + " and LOST!!";
+        document.getElementById("answer").style.backgroundColor = "red";
+        document.getElementById("answer").style.fontSize = "large";
+    }
+}
+
+
