@@ -177,6 +177,7 @@ async function initialize(){
             document.getElementById("answer").innerText = "You missed the word " + word + " and LOST!!";
             document.getElementById("answer").style.backgroundColor = "red";
             document.getElementById("answer").style.fontSize = "large";
+            hideKeyboard();
         }
 
     })
@@ -321,7 +322,7 @@ function openWinGame(){
     let audio = new Audio("yay.mp3");
     audio.play();
 
-
+    hideKeyboard()
 }
 
 
@@ -366,6 +367,9 @@ async function STARTOVER() {
 
 function toggleKeyboard() {
     var keyboard = document.getElementById('keyboard-container');
+    if (gameOver){
+        return;
+    }
     if (keyboard.style.display === "none" || keyboard.style.display === "") {
         keyboard.style.display = "block";
     } else {
@@ -374,9 +378,10 @@ function toggleKeyboard() {
 }
 
 
-
-
-
+function hideKeyboard() {
+    var keyboard = document.getElementById('keyboard-container');
+    keyboard.style.display = 'none';
+}
 
 
 function handleKeyPress(key) {
@@ -412,6 +417,7 @@ function handleKeyPress(key) {
         document.getElementById("answer").innerText = "You missed the word " + word + " and LOST!!";
         document.getElementById("answer").style.backgroundColor = "red";
         document.getElementById("answer").style.fontSize = "large";
+        hideKeyboard();
     }
 }
 

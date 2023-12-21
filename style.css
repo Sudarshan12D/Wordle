@@ -252,7 +252,8 @@ ol{
 #keyboard-container {
   display: none;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
+  
 }
 
 .keyboard-row {
@@ -310,7 +311,11 @@ ol{
 
   }
 
-
+  .headerbtn {
+    width: 50px; /* Reduced width for mobile */
+    
+    font-size: 18px; /* Adjust font size as needed */
+  }
 
 
 }
