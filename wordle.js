@@ -43,7 +43,6 @@ const getdict = async() => {
         {"word": "frog", "hint": "An amphibian with smooth skin and long hind legs"},
         {"word": "wolf", "hint": "A wild carnivore related to the dog"},
         {"word": "bear", "hint": "A large heavy mammal with thick fur and a very short tail"},
-        {"word": "milk", "hint": "A white liquid produced by mammals"},
         {"word": "rice", "hint": "A staple food grain"},
         {"word": "corn", "hint": "A cereal plant that yields large grains, or kernels"},
         {"word": "kiwi", "hint": "A flightless bird or a fuzzy brown fruit"},
